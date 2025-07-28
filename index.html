@@ -1,119 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vidhitsa Design Studio</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Open Sans', sans-serif;
-      background: #000; color: #fff; line-height: 1.6;
+      background-color: #000;
+      color: #fff;
     }
-    header { position: relative; height: 80vh;
-      background: url('https://source.unsplash.com/1600x900/?interior,blackandwhite') center/cover no-repeat;
+
+    header.hero-video {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
     }
-    header::before {
-      content: ''; position: absolute;
-      top:0; left:0; right:0; bottom:0;
-      background: rgba(0,0,0,0.7); z-index:1;
+
+    .hero-video video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
     }
-    .logo-container {
-      position: relative; z-index:2;
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
       height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.4);
     }
-    .logo-container img { max-width: 180px; }
-    .logo-container h1 {
+
+    .hero-content img {
+      max-width: 220px;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
       font-family: 'Playfair Display', serif;
-      margin-top: 1rem; font-size: 2rem;
-      letter-spacing:2px;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      color: #fff;
     }
-    nav { background: #111; padding:1rem; text-align:center; position:sticky; top:0; z-index:10; }
-    nav a { color:#fff; text-decoration:none; margin: 0 1rem; font-weight:bold; }
-    section { padding:4rem 2rem; max-width:1200px; margin:auto; }
-    .section-title { font-family:'Playfair Display', serif; font-size:2.5rem; text-align:center; margin-bottom:2rem; }
-    .scroll-animate { opacity:0; transform: translateY(40px); transition: all 0.8s ease; }
-    .scroll-animate.visible { opacity:1; transform: translateY(0); }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; }
-    .card { background:#111; padding:1rem; border-radius:8px; overflow:hidden; transition:transform .3s, filter .3s; filter:grayscale(100%);}
-    .card:hover { transform:translateY(-10px); filter:grayscale(0%);}
-    .card img { width:100%; height:200px; object-fit:cover; display:block; }
-    .card h3 { font-family:'Playfair Display', serif; font-size:1.2rem; margin-top:1rem; color:#fff; text-align:center; }
-    p { color:#ddd; margin-bottom:1rem; }
-    footer { text-align:center; padding:2rem; background:#111; font-size:0.9rem; color: #aaa; }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #111;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      filter: grayscale(100%);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      filter: grayscale(0%);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      padding: 1rem;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo-container">
+  <header class="hero-video">
+    <video autoplay muted loop playsinline>
+      <source src="https://cdn.coverr.co/videos/coverr-luxury-living-room-1694/1080p.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
       <img src="VDS-Logo-WHT_1_edited.png.avif" alt="VDS Logo" />
-      <h1>Your Space. Reimagined.</h1>
+      <p>Your Space Reimagined</p>
     </div>
   </header>
-  <nav>
-    <a href="#story">Our Story</a>
-    <a href="#services">Services</a>
-    <a href="#vision">Vision & Mission</a>
-    <a href="#collab">Collaborations</a>
-    <a href="#contact">Contact</a>
-  </nav>
 
-  <section id="story" class="scroll-animate">
-    <h2 class="section-title">Our Story</h2>
-    <p>Vidhitsa is a Sanskrit term meaning an intention to design or to do.</p>
-    <p>Vidhitsa Design Studio is a leading interior design studio based in Gurugram, India. Started in 2009, our experienced team of professionals has planned more than 1 million square feet of luxury residential, commercial and retail spaces. We are dedicated to providing our clients with premium interior design services that bring their vision to life.</p>
-    <p>Our team works in close collaboration with our clients to ensure their needs and desires are met. With a keen eye for detail and a passion for design, we strive to bring our clients the highest quality work and results.</p>
-  </section>
-
-  <section id="services" class="scroll-animate">
-    <h2 class="section-title">Services</h2>
-    <p>We believe that everyone deserves to be inspired by the spaces in which they dwell. Vidhitsa Design Studio has been transforming clients’ living and work spaces since 2010. We are a team of experts specialising in various verticals of interior design and building construction.</p>
+  <section>
+    <h2 class="section-title">Our Projects</h2>
     <div class="grid">
-      <div class="card"><img src="https://source.unsplash.com/400x300/?spaceplanning" /><h3>Space Planning</h3></div>
-      <div class="card"><img src="https://source.unsplash.com/400x300/?moodboard" /><h3>Concept Development</h3></div>
-      <div class="card"><img src="https://source.unsplash.com/400x300/?blueprint" /><h3>Design Documentation</h3></div>
-      <div class="card"><img src="https://source.unsplash.com/400x300/?fitout" /><h3>Turnkey Fitout</h3></div>
-      <div class="card"><img src="https://source.unsplash.com/400x300/?projectmanagement" /><h3>Project Management</h3></div>
-      <div class="card"><img src="https://source.unsplash.com/400x300/?construction" /><h3>Building Construction</h3></div>
+      <div class="card">
+        <img src="https://source.unsplash.com/600x400/?interior,modern" alt="Modern Living Room" />
+        <h3>Modern Living Room</h3>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/600x400/?interior,luxury" alt="Luxury Apartment" />
+        <h3>Luxury Apartment</h3>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/600x400/?interior,minimalist" alt="Minimalist Home" />
+        <h3>Minimalist Home</h3>
+      </div>
     </div>
   </section>
 
-  <section id="vision" class="scroll-animate">
-    <h2 class="section-title">Our Vision & Mission</h2>
-    <p><strong>Vision:</strong> At Vidhitsa Design Studio, we strive to create beautiful and unique spaces that reflect our clients' unique personalities. We have a passion for creating spaces that are both aesthetically pleasing and highly functional...</p>
-    <p><strong>Mission:</strong> Our mission is to create luxurious, stylish, and timeless interiors that reflect the clients’ personality and lifestyle... we type carefully to exceed expectations.</p>
+  <section>
+    <h2 class="section-title">Our Services</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://source.unsplash.com/600x400/?architecture,planning" alt="Space Planning" />
+        <h3>Space Planning</h3>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/600x400/?design,board" alt="Concept Development" />
+        <h3>Concept Development</h3>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/600x400/?blueprint,design" alt="Design Documentation" />
+        <h3>Design Documentation</h3>
+      </div>
+    </div>
   </section>
 
-  <section id="collab" class="scroll-animate">
+  <section>
     <h2 class="section-title">Collaborations</h2>
-    <p>A well designed space that’s highly functional, aesthetically beautiful and built to last – that’s our goal...</p>
     <div class="grid">
-      <div class="card"><img src="https://upload.wikimedia.org/.../MG_Motor_Logo.svg.png" /><h3>MG Motors</h3></div>
-      <div class="card"><img src="https://upload.wikimedia.org/.../Ford_logo_flat.svg.png" /><h3>Ford</h3></div>
-      <div class="card"><img src="https://upload.wikimedia.org/.../Hyundai_Motor_Company_logo.svg.png" /><h3>Hyundai</h3></div>
-      <div class="card"><img src="https://via.placeholder.com/400x300?text=Bean+Brothers" /><h3>Bean Brothers Cafe</h3></div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/MG_Motor_Logo.svg" alt="MG" />
+        <h3>MG Motors</h3>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Ford_logo_flat.svg" alt="Ford" />
+        <h3>Ford</h3>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Hyundai_Motor_Company_logo.svg" alt="Hyundai" />
+        <h3>Hyundai</h3>
+      </div>
     </div>
-  </section>
-
-  <section id="contact" class="scroll-animate">
-    <h2 class="section-title">Contact Us</h2>
-    <p>97P, Sector 27, Gurugram<br>Haryana 122009, India</p>
-    <p>Email: hello@vidhitsadesignstudio.com | Phone: +91‑92050‑30477</p>
   </section>
 
   <footer>
-    &copy; 2025 Vidhitsa Design Studio. All Right Reserved.
+    <p>97P, Sector 27, Gurugram, Haryana 122009, India</p>
+    <p>Email: hello@vidhitsadesignstudio.com | Phone: 09205030477</p>
+    <p>&copy; 2025 Vidhitsa Design Studio. All rights reserved.</p>
   </footer>
 
-  <script>
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    });
-    document.querySelectorAll('.scroll-animate').forEach(el => obs.observe(el));
-  </script>
 </body>
 </html>
